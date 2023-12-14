@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Вход</title>
+</head>
+<body>
+<div class="phone">
+   <form action="" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+                <p>{{ field.label_tag }}</p>
+            {{ field }}
+        {% endfor %}
+        <div>
+           <button class="btn2"><a style="text-decoration: none; color: black" href="{% url 'reg' %}">Зарегестрироватся</a></button>
+        </div>
+       <button class="btn" >Войти</button>
+
+   </form>
+</div>
+</body>
+</html>
